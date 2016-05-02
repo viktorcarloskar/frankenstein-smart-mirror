@@ -18,6 +18,10 @@ app.on('ready', function() {
   var rq = require('request-promise');
   var mainAddr = 'http://localhost:5000';
 
+  subpy.stdout.on('data', function(data) {
+    console.log('FACES' + data)
+  })
+
   var openWindow = function(){
     mainWindow = new BrowserWindow({width: 800, height: 600});
     // mainWindow.loadURL('file://' + __dirname + '/index.html');

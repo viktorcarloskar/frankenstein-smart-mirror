@@ -18,10 +18,17 @@ app.on('ready', function() {
   var rq = require('request-promise');
   var mainAddr = 'http://localhost:5000';
 
+  subpy.stdout.on('data', function(data) {
+    console.log('FACES' + data)
+  })
+
+  var rq = require('request-promise');
+
   var openWindow = function(){
     mainWindow = new BrowserWindow({width: 800, height: 600});
+    var path = 'file://' + __dirname + '/client/index.html';
     // mainWindow.loadURL('file://' + __dirname + '/index.html');
-    mainWindow.loadURL('http://localhost:5000');
+    mainWindow.loadURL(path);
     mainWindow.webContents.openDevTools();
     mainWindow.on('closed', function() {
       mainWindow = null;
@@ -30,15 +37,8 @@ app.on('ready', function() {
   };
 
   var startUp = function(){
-    rq(mainAddr)
-      .then(function(htmlString){
-        console.log('server started!');
-        openWindow();
-      })
-      .catch(function(err){
-        //console.log('waiting for the server start...');
-        startUp();
-      });
+      console.log('server started!');
+      openWindow();
   };
 
   // fire!

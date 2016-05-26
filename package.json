@@ -4,7 +4,8 @@
   "main"    : "main.js",
   "dependencies": {
     "request-promise": "*",
-    "electron-prebuilt": "*"
+    "electron-prebuilt": "*",
+    "electron-safe-ipc": "*"
   },
   "scripts": {
     "start": "node_modules/.bin/electron ."

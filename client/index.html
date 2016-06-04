@@ -3,11 +3,160 @@
   <head>
     <meta charset="utf-8">
     <title>Smart mirror GUI</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    Hello world!
-    <div id="face"></div>
+    <div class="interface">
+      <div id="left">
+        <div class="calendar">
+          <div class="day">
+            <div class="header">
+              <div class="date-text">Today</div>
+              <div class="date-text" id="today-date"></div>
+            </div>
+            <div class="appointments">
+              <div class="appointment">
+                <div class="time">
+                  <span class="from">8:00</span>
+                  <span class="to">9:00</span>
+                </div>
+                <div class="text">Morning meeting</div>
+              </div>
+              <div class="appointment">
+                <div class="time">
+                  <span class="from">12:00</span>
+                  <span class="to">13:00</span>
+                </div>
+                <div class="text">Lunch</div>
+              </div>
+              <div class="appointment">
+                <div class="time">
+                  <span class="from">17:00</span>
+                  <span class="to">18:00</span>
+                </div>
+                <div class="text">Exercise</div>
+              </div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="header">
+              <div class="date-text">Tomorrow</div>
+              <div class="date-text" id="tomorrow-date"></div>
+            </div>
+            <div class="appointments">
+              <div class="appointment">
+                <div class="time">
+                  <span class="from">8:00</span>
+                  <span class="to">9:00</span>
+                </div>
+                <div class="text">Morning meeting</div>
+              </div>
+              <div class="appointment">
+                <div class="time">
+                  <span class="from">12:00</span>
+                  <span class="to">13:00</span>
+                </div>
+                <div class="text">Lunch</div>
+              </div>
+              <div class="appointment">
+                <div class="time">
+                  <span class="from">17:00</span>
+                  <span class="to">18:00</span>
+                </div>
+                <div class="text">Exercise</div>
+              </div>
+            </div>
+          </div>
+          <div class="day">
+            <div class="header">
+              <div class="date-text">Day after tomorrow</div>
+              <div class="date-text" id="day-after-date"></div>
+            </div>
+            <div class="appointments">
+              <div class="appointment">
+                <div class="time">
+                  <span class="from">8:00</span>
+                  <span class="to">9:00</span>
+                </div>
+                <div class="text">Morning meeting</div>
+              </div>
+              <div class="appointment">
+                <div class="time">
+                  <span class="from">12:00</span>
+                  <span class="to">13:00</span>
+                </div>
+                <div class="text">Lunch</div>
+              </div>
+              <div class="appointment">
+                <div class="time">
+                  <span class="from">17:00</span>
+                  <span class="to">18:00</span>
+                </div>
+                <div class="text">Exercise</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="middle">
+        <div id="top"></div>
+        <div id="human"></div>
+      </div>
+      <div id="right">
+        <div class="news">
+          <div class="stories">
+            <div class="story">
+              <div class="image">
+                <img src="http://i.onionstatic.com/onion/5351/7/16x9/1600.jpg" alt="">
+              </div>
+              <div class="text">
+                <h3>Man’s Garbage To Have Much More Significant Effect On Planet Than He Will</h3>
+                <div class="source">
+                  <a href="http://www.theonion.com/article/mans-garbage-have-much-more-significant-effect-pla-52985">theonion.com</a>
+                </div>
+              </div>
+            </div>
+            <div class="story">
+              <div class="image">
+                <img src="http://i.onionstatic.com/onionstudios/3910/16x9/800.jpg" alt="">
+              </div>
+              <div class="text">
+                <h3>Scientists Find Strong Link Between Male Virility, Wearing Mötley Crüe Denim Jacket</h3>
+                <div class="source">
+                  <a href="http://www.theonion.com/video/scientists-find-strong-link-between-male-virility--51429">theonion.com</a>
+                </div>
+              </div>
+            </div>
+            <div class="story">
+              <div class="image">
+                <img src="http://i.onionstatic.com/onion/5347/9/original/1920.jpg" alt="">
+              </div>
+              <div class="text">
+                <h3>Tips For First Date Conversation</h3>
+                <div class="source">
+                  <a href="http://www.theonion.com/graphic/tips-first-date-conversation-52949">theonion.com</a>
+                </div>
+              </div>
+            </div>
+            <div class="story">
+              <div class="image">
+                <img src="" alt="">
+              </div>
+              <div class="text">
+                <h3>Angelina Jolie Becomes College Professor</h3>
+                <div class="source">
+                  <a href="#"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+  <script src="ResizeSensor.js"></script>
+  <script src="ElementQueries.js"></script>
+  <script src="moment.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </html>

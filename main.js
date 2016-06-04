@@ -1,4 +1,6 @@
 const electron = require('electron');
+const fs = require('fs');
+const less = require('less');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 electron.crashReporter.start();
@@ -18,6 +20,27 @@ app.on('ready', function() {
   //var subpy = require('child_process').spawn('./dist/hello.exe');
   var rq = require('request-promise');
   var mainAddr = 'http://localhost:5000';
+
+  fs.readFile('./client/style.less', 'utf8', function (err, data) {
+    if (err) {
+      return console.log(err);
+    }
+    less.render(data, {
+        paths: ['.', './lib', './client'],  // Specify search paths for @import directives
+        filename: 'client/style.less', // Specify a filename, for better error messages
+        compress: false          // Minify CSS output
+      },
+      function (e, output) {
+        //console.log(output.css);
+        fs.writeFile("./client/style.css", output.css, function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("The file was saved!");
+        });
+      }
+    );
+  });
 
   subpy.stdout.on('data', function(data) {
     var strData = "" + data;
